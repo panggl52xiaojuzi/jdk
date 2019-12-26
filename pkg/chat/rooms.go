@@ -105,3 +105,7 @@ func (m *Manager) Submit(userid, roomid, text string) {
 	}
 	m.messages <- msg
 }
+
+func Abs(input int) int {
+	return input
+}
