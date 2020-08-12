@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: go-route
+spec:
+  rules:
+    - host: www.c5a194a8ee10044eba673c20eb3367692.cn-beijing.alicontainer.com
+      http:
+        paths:
+          - backend:
+              serviceName: go-service
+              servicePort: 8080
+            path: /

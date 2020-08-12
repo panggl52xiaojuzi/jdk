@@ -17,13 +17,21 @@ func main() {
 	roomManager = chat.NewRoomManager()
 	router := gin.Default()
 	router.SetHTMLTemplate(chat.HTML)
-
+	
+    router.GET("/", get)
 	router.GET("/room/:roomid", roomGET)
 	router.POST("/room/:roomid", roomPOST)
 	router.DELETE("/room/:roomid", roomDELETE)
 	router.GET("/stream/:roomid", stream)
 
 	router.Run(":8080")
+}
+
+func get(c *gin.Context) {
+    c.JSON(http.StatusOK, gin.H{
+		"status":  "success",
+		"message": "Welcome to go world",
+	})
 }
 
 func stream(c *gin.Context) {

@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: go-sample
+  name: go-sample
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: go-sample
+  template:
+    metadata:
+      labels:
+        run: go-sample
+    spec:
+      containers:
+      - image: ${IMAGE}
+        name: app
