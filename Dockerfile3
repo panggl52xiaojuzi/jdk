@@ -1,5 +1,6 @@
 FROM registry.cn-beijing.aliyuncs.com/hub-mirrors/alpine
 COPY output/chatroot /app/chatroot
 LABEL MAINTAINER yunlong <zhenmu.zyl@alibaba-inc.com>
+RUN mkdir -p /app
 
 CMD ["/app/chatroot"]
