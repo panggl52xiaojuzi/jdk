@@ -30,7 +30,7 @@ func main() {
 func get(c *gin.Context) {
     c.JSON(http.StatusOK, gin.H{
 		"status":  "success",
-		"message": "Welcome to go world",
+		"message": "Welcome to go world1",
 	})
 }
 
